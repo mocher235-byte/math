@@ -82,15 +82,19 @@
         .unit-card { border-left: 4px solid #3b82f6; transition: all 0.2s; }
         .unit-card:hover { background-color: #f0f7ff; transform: translateX(5px); }
         
-        .section-tag {
-            display: inline-block;
-            background: #f0f7ff;
-            color: #1e40af;
-            font-weight: bold;
-            padding: 4px 16px;
-            border-radius: 9999px;
-            margin-bottom: 1.5rem;
-            border: 1px solid #dbeafe;
+        .honor-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .quote-box {
+            position: relative;
+            background: #f8fafc;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            border-left: 6px solid #3b82f6;
         }
     </style>
 </head>
@@ -153,7 +157,7 @@
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
                     <a href="#master" class="bg-yellow-400 text-blue-900 px-10 py-4 rounded-xl font-bold hover:bg-yellow-300 transition shadow-lg text-center">見證師資深度</a>
-                    <a href="#admissions" class="bg-white/10 border border-white/40 px-10 py-4 rounded-xl font-bold hover:bg-white/20 transition text-center">查看最新課程</a>
+                    <a href="#admissions" class="bg-white/10 border border-white/40 px-10 py-4 rounded-xl font-bold hover:bg-white/20 transition text-center">查看招生課程</a>
                 </div>
             </div>
             <div class="w-full md:w-2/5 flex justify-center">
@@ -168,55 +172,98 @@
     <!-- Master Instructor Section -->
     <section id="master" class="py-16 sm:py-24 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
-                <div class="w-full lg:w-1/2 order-2 lg:order-1">
-                    <div class="relative bg-gray-50 rounded-3xl p-8 sm:p-12 border border-gray-100">
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-16">
+                <!-- 左欄：圖片與榮譽榜 -->
+                <div class="w-full lg:w-5/12 order-2 lg:order-1">
+                    <div class="relative bg-gray-50 rounded-3xl p-8 sm:p-12 border border-gray-100 sticky top-24">
                         <div class="absolute -top-6 left-8 bg-blue-700 text-white px-6 py-3 rounded-2xl shadow-xl">
                             <span class="text-sm opacity-80 block italic">Golden Name Legend</span>
                             <span class="text-xl font-bold tracking-wider">總班主任榮譽榜</span>
                         </div>
-                        <div class="mt-4 space-y-8">
-                            <div class="grid sm:grid-cols-2 gap-y-8 gap-x-6">
+                        <div class="mt-8 space-y-10">
+                            <img src="https://i.postimg.cc/NG6hJTBv/S-654442498.jpg" alt="總班主任榮譽榜圖片" class="honor-img mx-auto">
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-6">
                                 <div class="flex items-start space-x-3">
                                     <i class="fas fa-medal text-yellow-500 text-2xl mt-1"></i>
-                                    <span class="font-bold text-gray-700">補教最高榮譽<br><span class="text-blue-600">補教師鐸獎</span></span>
+                                    <span class="font-bold text-gray-700 text-lg">補教最高榮譽<br><span class="text-blue-600">補教師鐸獎</span></span>
                                 </div>
                                 <div class="flex items-start space-x-3">
                                     <i class="fas fa-trophy text-yellow-500 text-2xl mt-1"></i>
-                                    <span class="font-bold text-gray-700">教學計劃<br><span class="text-blue-600">全國冠軍</span></span>
+                                    <span class="font-bold text-gray-700 text-lg">教學計劃<br><span class="text-blue-600">全國冠軍</span></span>
                                 </div>
                                 <div class="flex items-start space-x-3">
                                     <i class="fas fa-certificate text-blue-500 text-2xl mt-1"></i>
-                                    <span class="font-bold text-gray-900">教育部合格<br><span class="text-blue-600">教師證書</span></span>
+                                    <span class="text-lg"><span class="font-bold text-gray-900">教育部合格</span><br><span class="text-blue-600 font-bold">教師證書</span></span>
                                 </div>
                                 <div class="flex items-start space-x-3">
                                     <i class="fas fa-star text-yellow-400 text-2xl mt-1"></i>
-                                    <span class="font-bold text-gray-700">全國大專<br><span class="text-blue-600">優秀青年</span></span>
+                                    <span class="font-bold text-gray-700 text-lg">全國大專<br><span class="text-blue-600">優秀青年</span></span>
                                 </div>
                                 <div class="flex items-start space-x-3">
                                     <i class="fas fa-thumbs-up text-blue-500 text-2xl mt-1"></i>
-                                    <span class="font-bold text-gray-700">家長學生<br><span class="text-blue-600">口碑推薦</span></span>
+                                    <span class="font-bold text-gray-700 text-lg">家長學生<br><span class="text-blue-600">口碑推薦</span></span>
                                 </div>
                                 <div class="flex items-start space-x-3">
                                     <i class="fas fa-flag text-red-500 text-2xl mt-1"></i>
-                                    <span class="font-bold text-gray-700">奪冠獲獎<br><span class="text-blue-600">總統親自表揚</span></span>
+                                    <span class="font-bold text-gray-700 text-lg">奪冠獲獎<br><span class="text-blue-600">總統親自表揚</span></span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="w-full lg:w-1/2 order-1 lg:order-2">
-                    <h3 class="text-2xl sm:text-3xl font-bold mb-6 text-gray-800 leading-snug italic">「孩子很懶，但就是喜歡上金名的數學課」</h3>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
-                        一位上了好幾家資優數學後的家長給了金名這樣評價：<br>
-                        <span class="text-blue-700 font-bold bg-blue-50 px-3 py-1 rounded-md inline-block mt-2 shadow-sm italic">「我沒看過我兒子這麼喜歡數學！他平時很懶、不喜歡讀書，但就是喜歡上金名的資優數學課。」</span>
-                    </p>
-                    <div class="bg-blue-600 text-white p-8 rounded-3xl shadow-xl">
-                        <h4 class="font-bold text-xl mb-4 flex items-center">
-                            <i class="fas fa-trophy text-yellow-300 mr-3"></i> 資優鑑定突破紀錄
+
+                <!-- 右欄：教學理念與引導細節 -->
+                <div class="w-full lg:w-7/12 order-1 lg:order-2 space-y-8">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6 text-gray-800 leading-snug">將重點放在「老師的引導」</h3>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                            我們相信，最好的數學教育並非塞入公式，而是點燃孩子的熱情。作業安排更是經過精密規劃：
+                        </p>
+                        
+                        <div class="quote-box mb-8">
+                            <h4 class="font-bold text-xl text-blue-900 mb-2">精密的作業安排</h4>
+                            <p class="text-gray-700 leading-relaxed">
+                                作業不僅要符合孩子的能力，更要「只比目前能力難一點點」。這讓孩子在下次上課前，已經自主思考過核心觀念，當老師再引導時，學習效果與速度將會呈現爆炸性的提升！您可以把作業看作是「課前預習」，是對孩子而言最主動的學習法。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-orange-50 p-6 rounded-2xl border-l-4 border-orange-400">
+                            <h4 class="font-bold text-orange-900 mb-3 flex items-center">
+                                <i class="fas fa-search-plus mr-2"></i> 對於想不出來的孩子
+                            </h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                這代表他已經具備了強烈的「求知動機」。老師會用特殊方式引發學習渴望，甚至出現過孩子用「求老師」的方式，迫切希望知道解題方法的動人情境。
+                            </p>
+                        </div>
+                        <div class="bg-green-50 p-6 rounded-2xl border-l-4 border-green-400">
+                            <h4 class="font-bold text-green-900 mb-3 flex items-center">
+                                <i class="fas fa-rocket mr-2"></i> 對於已經想出的孩子
+                            </h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                我會立即改問法增加難度，讓他們挑戰更進階的問題。若能解答，老師會用「很誇張」的方式誇獎，這份成就感正是培養孩子「熱愛數學、熱愛挑戰」的核心養分。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-600 text-white p-8 rounded-3xl shadow-xl space-y-6">
+                        <h4 class="font-bold text-2xl italic">「老師再等一下...不要講答案！」</h4>
+                        <p class="opacity-90 leading-relaxed text-lg">
+                            這是我最常聽到的回答。當我問學生：「這題想很久了，要不要教你？」孩子們幾乎都會回答：<span class="bg-white/20 px-2 rounded">「我要再想想，不要公布答案...」</span> 
+                        </p>
+                        <p class="font-bold border-t border-white/20 pt-4">
+                            這代表我們已經成功培養出孩子對數學的興趣與不服輸的資優精神！
+                        </p>
+                    </div>
+
+                    <div class="bg-blue-50 p-8 rounded-3xl border border-blue-100">
+                        <h4 class="font-bold text-blue-900 text-xl mb-4 flex items-center">
+                            <i class="fas fa-trophy mr-3"></i> 資優鑑定震撼記錄
                         </h4>
-                        <p class="opacity-95 text-lg leading-relaxed mb-4">
-                            該生在小六鑑定時，其<strong class="text-yellow-300 underline decoration-2 underline-offset-4">數學科成績幾乎是其他考生的兩倍以上</strong>，順利通過縣府鑑定。家長說因為數學成績超高，當時自然科隨便考也會錄取！
+                        <p class="text-gray-700 leading-relaxed">
+                            曾有一位上了好幾家資優數學後轉來的家長感嘆：「我沒看過我兒子這麼喜歡數學！」該生平時不愛讀書，但唯獨熱愛金名的課。在小六資優鑑定時，其<strong class="text-red-600">數學成績幾乎是其他人的兩倍以上</strong>，順利通過縣府鑑定。家長笑稱因為數學成績超高，連自然科隨便考也會錄取！
                         </p>
                     </div>
                 </div>
@@ -226,42 +273,40 @@
 
     <!-- Philosophy Section -->
     <section id="philosophy" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4 text-blue-900 italic">神兵利器 · 唯有高手發揮</h2>
-                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
-                    坊間教材眾多，我們結合專業奧數教材與逾二十年實戰經驗，為孩子鍛造最強大腦。
-                </p>
-            </div>
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-blue-900 italic">神兵利器 · 唯有高手發揮</h2>
+            <p class="text-gray-600 text-lg max-w-3xl mx-auto mb-16">
+                坊間教材眾多，我們結合專業奧數教材與逾二十年實戰經驗，為孩子鍛造最強大腦。
+            </p>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-orange-50 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-orange-500 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-orange-200">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-orange-50 course-card">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg">
                         <i class="fas fa-brain text-xl"></i>
                     </div>
                     <h4 class="font-bold text-lg mb-4 text-orange-900">基礎數感訓練</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed">透過「移多補少」建立核心數量感。精確計數不遺漏，啟發基數與序數的辨識能力。</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">精確計數與移多補少，在低年級啟發基數與序數辨識能力。</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-blue-50 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-blue-500 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-200">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-blue-50 course-card">
+                    <div class="w-12 h-12 bg-blue-500 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg">
                         <i class="fas fa-microchip text-xl"></i>
                     </div>
                     <h4 class="font-bold text-lg mb-4 text-blue-900">邏輯與代數思維</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed">由規規分析與等量代換出發，在填寫數陣中理解交集概念，提早建立代數建模能力。</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">圖形算式等量代換，在數陣中理解交集概念與代數建模。</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-green-50 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-green-500 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-green-200">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-green-50 course-card">
+                    <div class="w-12 h-12 bg-green-500 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg">
                         <i class="fas fa-cube text-xl"></i>
                     </div>
                     <h4 class="font-bold text-lg mb-4 text-green-900">空間感知建構</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed">立體積木拆解與火柴棒變換，在腦中進行三維形體的視覺化組合與逆向思考練習。</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">積木拆解與火柴棒變換，進行三維視覺化組合與逆向練習。</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-purple-50 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-purple-500 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-purple-200">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-purple-50 course-card">
+                    <div class="w-12 h-12 bg-purple-500 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg">
                         <i class="fas fa-stream text-xl"></i>
                     </div>
                     <h4 class="font-bold text-lg mb-4 text-purple-900">系統化解難能力</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed">學會「有序思考」，在複雜情境（如排隊、間隔問題）中不重複也不遺漏地排除陷阱。</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">訓練有序思考，在複雜情境中精確排除重複計算與陷阱。</p>
                 </div>
             </div>
         </div>
@@ -272,11 +317,10 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex flex-col lg:flex-row items-center gap-12">
                 <div class="lg:w-1/2">
-                    <div class="inline-block bg-blue-600 text-white px-4 py-1 rounded-md text-sm font-bold mb-4">激發強烈動機</div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-900">捨不得下課！<br>趣味計分系統讓孩子愛上算題</h2>
+                    <div class="inline-block bg-blue-600 text-white px-4 py-1 rounded-md text-sm font-bold mb-4">保留趣味計分系統</div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-900 text-center lg:text-left">上課超好玩！<br>孩子主動要求「再多算幾題」</h2>
                     <p class="text-gray-700 text-lg leading-relaxed mb-6">
-                        在金名，孩子會主動要求「再多算幾題」！<br>
-                        我們採用獨特的<strong>趣味計分系統</strong>，透過同儕良性競爭營造絕佳讀書氛圍。孩子們常常下課時間到了都捨不得走，硬是要多算幾題加分！
+                        在金名，孩子會主動追求進步。我們採用的<strong>趣味計分系統</strong>，透過同儕良性競爭營造絕佳氛圍。孩子們常常下課時間到了都捨不得走，硬是要多算幾題加分！
                     </p>
                     <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-yellow-400">
                         <p class="italic text-gray-700">「同學學習動機強烈，同儕競爭帶動學習自信，讓數學成為一件有成就感的事。」</p>
@@ -284,7 +328,7 @@
                 </div>
                 <div class="lg:w-1/2 w-full">
                     <div class="relative">
-                        <img src="https://i.postimg.cc/mZ6JbBVC/S-654360578.jpg" alt="趣味計分系統" class="rounded-3xl shadow-2xl border-4 border-white">
+                        <img src="https://i.postimg.cc/mZ6JbBVC/S-654360578.jpg" alt="趣味計分系統排行榜" class="rounded-3xl shadow-2xl border-4 border-white">
                         <div class="absolute -top-4 -right-4 bg-red-500 text-white font-bold py-2 px-6 rounded-full shadow-lg animate-bounce">
                             挑戰積分中！
                         </div>
@@ -294,12 +338,12 @@
         </div>
     </section>
 
-    <!-- Branch Admissions Section -->
-    <section id="admissions" class="py-20 bg-gray-100 border-t border-gray-200">
+    <!-- Admissions Section -->
+    <section id="admissions" class="py-20 bg-gray-100">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-4 text-gray-900">🚀 2026 各大課程 · 熱烈招生中！</h2>
-                <p class="text-gray-600 text-lg">選擇離您最近的校區，為孩子的未來領航</p>
+                <p class="text-gray-600 text-lg">選擇分校專業計畫，為孩子的未來領航</p>
             </div>
 
             <!-- 金名竹北校 -->
@@ -347,7 +391,6 @@
                     <h3 class="text-2xl sm:text-3xl font-bold text-purple-800 border-b-4 border-purple-500 inline-block pb-1">✨ 金名德晉校 ✨</h3>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                    <!-- 德晉正音班 -->
                     <a href="https://mocher235-byte.github.io/djPreschool/" target="_blank" class="course-card bg-white p-8 rounded-3xl border-l-8 border-l-purple-500 group">
                         <div class="flex items-center mb-6">
                             <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-purple-600 group-hover:text-white transition">
@@ -361,7 +404,6 @@
                             <i class="fas fa-arrow-right animate-pulse"></i>
                         </div>
                     </a>
-                    <!-- 德晉國中課表 -->
                     <a href="https://mocher235-byte.github.io/dj789/" target="_blank" class="course-card bg-white p-8 rounded-3xl border-l-8 border-l-blue-500 group">
                         <div class="flex items-center mb-6">
                             <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-blue-600 group-hover:text-white transition">
@@ -380,12 +422,12 @@
         </div>
     </section>
 
-    <!-- Branch Map Navigation -->
+    <!-- Footer Map Navigation -->
     <section id="branches" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-blue-900 mb-4">分校導航 · 歡迎親臨諮詢</h2>
-                <p class="text-gray-600">我們已準備好最頂尖的「武器」，等待與孩子共同戰勝難題</p>
+                <p class="text-gray-600">文字對齊整齊，為您提供最便捷的資訊</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -407,7 +449,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="https://share.google/LjA0ep0IBUpaqT4Pw" target="_blank" class="w-full bg-blue-600 text-white text-center py-3 rounded-lg font-bold hover:bg-blue-700 transition block shadow-md">
+                    <a href="https://share.google/LjA0ep0IBUpaqT4Pw" target="_blank" class="w-full bg-blue-600 text-white text-center py-3 rounded-lg font-bold hover:bg-blue-700 transition block">
                         <i class="fas fa-directions mr-2"></i>Google 地圖導航
                     </a>
                 </div>
@@ -430,7 +472,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="https://share.google/lHzQgD2J6eSx5p851" target="_blank" class="w-full bg-green-600 text-white text-center py-3 rounded-lg font-bold hover:bg-green-700 transition block shadow-md">
+                    <a href="https://share.google/lHzQgD2J6eSx5p851" target="_blank" class="w-full bg-green-600 text-white text-center py-3 rounded-lg font-bold hover:bg-green-700 transition block">
                         <i class="fas fa-directions mr-2"></i>Google 地圖導航
                     </a>
                 </div>
@@ -453,7 +495,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="https://share.google/kF7KmSOl6BN2IOaQD" target="_blank" class="w-full bg-purple-600 text-white text-center py-3 rounded-lg font-bold hover:bg-purple-700 transition block shadow-md">
+                    <a href="https://share.google/kF7KmSOl6BN2IOaQD" target="_blank" class="w-full bg-purple-600 text-white text-center py-3 rounded-lg font-bold hover:bg-purple-700 transition block">
                         <i class="fas fa-directions mr-2"></i>Google 地圖導航
                     </a>
                 </div>
@@ -461,7 +503,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Final Footer -->
     <footer class="bg-gray-900 text-white py-16 px-4 text-center">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold mb-10 text-yellow-400">名師引航 · 為孩子開啟智慧之門</h2>
@@ -477,7 +519,7 @@
     </footer>
 
     <script>
-        // Smooth Scroll Logic with Error Handling
+        // Smooth Scroll Logic with Null Checks
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
