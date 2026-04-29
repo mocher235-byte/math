@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>金名資優數學 | 奧林匹克進階數學教材與國際試題訓練</title>
+    <title>金名資優數學 | 奧林匹克進階數學與二十年名師引航</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -11,39 +11,43 @@
         body { font-family: 'Noto Sans TC', sans-serif; scroll-behavior: smooth; }
         .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
         
-        /* 3D Floating Buttons */
+        /* 3D Floating Buttons Group */
         .float-btn-group {
             position: fixed;
-            right: 20px;
-            bottom: 30px;
+            right: 16px;
+            bottom: 24px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
             z-index: 1000;
         }
         .float-btn {
-            width: 55px;
-            height: 55px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 24px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            font-size: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
         }
+        @media (min-width: 768px) {
+            .float-btn { width: 55px; height: 55px; font-size: 24px; }
+            .float-btn-group { right: 24px; bottom: 30px; }
+        }
         .float-btn:hover {
             transform: scale(1.1) translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
         .float-btn .tooltip {
             position: absolute;
-            right: 70px;
+            right: 65px;
             background: #333;
             color: white;
-            padding: 5px 12px;
+            padding: 4px 10px;
             border-radius: 6px;
             font-size: 12px;
             white-space: nowrap;
@@ -57,29 +61,37 @@
         .btn-fb-dejin { background-color: #0056b3; }
         .btn-line { background-color: #06C755; }
 
-        .course-card {
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-        .course-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            border-color: #3b82f6;
-        }
-
         .branch-card {
             background: white;
             border-radius: 1rem;
             padding: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            border: 1px solid #edf2f7;
+            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            border: 1px solid #f0f0f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
-        .logo-img { height: 60px; width: auto; }
-        .score-img { max-width: 100%; height: auto; border-radius: 1rem; border: 4px solid #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .logo-img { height: 45px; width: auto; object-fit: contain; }
+        @media (min-width: 640px) { .logo-img { height: 60px; } }
+        
+        .course-card { transition: all 0.3s ease; height: 100%; border: 1px solid #edf2f7; }
+        .course-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: #3b82f6; }
+
+        .unit-card { border-left: 4px solid #3b82f6; transition: all 0.2s; }
+        .unit-card:hover { background-color: #f0f7ff; transform: translateX(5px); }
+        
+        .section-tag {
+            display: inline-block;
+            background: #f0f7ff;
+            color: #1e40af;
+            font-weight: bold;
+            padding: 4px 16px;
+            border-radius: 9999px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #dbeafe;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -101,137 +113,155 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <div class="flex items-center space-x-3">
-                    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjRqKCNWrsH37nthSraJgRc4iUslqv0Pw0urBa9ZwTuV3CLiliGNWjV3EddlJwJ7ox07Uol5GQL77Msjqw-_MUrwQIS6E7iHsdc-RaogP2TVjkJmZ1IkGSrX4ZCLfiZmapAPl5PyxovhZwtsxh080ROmCTJWQcbdtBMAAYIlO-BIsofB7tRYNn0ZZTHEgM" alt="Main Logo" class="logo-img">
-                    <div class="hidden sm:block">
-                        <span class="text-xl font-bold text-blue-800 block leading-tight">金名 🌟 資優數學</span>
-                        <div class="flex space-x-2">
-                            <span class="text-[10px] bg-blue-100 text-blue-600 px-1 rounded">竹北</span>
-                            <span class="text-[10px] bg-green-100 text-green-600 px-1 rounded">東興</span>
-                            <span class="text-[10px] bg-purple-100 text-purple-600 px-1 rounded">德晉</span>
+            <div class="flex justify-between h-16 sm:h-20 items-center">
+                <div class="flex items-center space-x-2 sm:space-x-3">
+                    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjRqKCNWrsH37nthSraJgRc4iUslqv0Pw0urBa9ZwTuV3CLiliGNWjV3EddlJwJ7ox07Uol5GQL77Msjqw-_MUrwQIS6E7iHsdc-RaogP2TVjkJmZ1IkGSrX4ZCLfiZmapAPl5PyxovhZwtsxh080ROmCTJWQcbdtBMAAYIlO-BIsofB7tRYNn0ZZTHEgM" alt="Golden Name Logo" class="logo-img">
+                    <div class="hidden xs:block">
+                        <span class="text-lg sm:text-xl font-bold text-blue-900 block leading-none">金名資優數學</span>
+                        <div class="flex space-x-1 mt-1">
+                            <span class="text-[10px] bg-blue-50 text-blue-600 px-1.5 py-0.5 rounded font-bold">竹北</span>
+                            <span class="text-[10px] bg-green-50 text-green-600 px-1.5 py-0.5 rounded font-bold">東興</span>
+                            <span class="text-[10px] bg-purple-50 text-purple-600 px-1.5 py-0.5 rounded font-bold">德晉</span>
                         </div>
                     </div>
                 </div>
-                <div class="hidden md:flex space-x-8 font-medium">
+                <div class="flex space-x-4 sm:space-x-8 text-sm sm:text-base font-medium">
+                    <a href="#master" class="hover:text-blue-600 transition text-blue-700 font-bold">名師指引</a>
                     <a href="#philosophy" class="hover:text-blue-600 transition">課程核心</a>
-                    <a href="#branches" class="hover:text-blue-600 transition">分校資訊</a>
-                    <a href="#gamification" class="hover:text-blue-600 transition">計分系統</a>
-                    <a href="#admissions" class="hover:text-blue-600 transition text-red-500 font-bold">2026招生</a>
+                    <a href="#admissions" class="hover:text-red-600 transition text-red-500 font-bold underline decoration-2 underline-offset-4">2026招生</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="gradient-bg text-white py-16 px-4">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <div class="inline-block bg-blue-500/30 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-blue-400">
-                    專業奧數與自編資優教材
+    <header class="gradient-bg text-white py-12 sm:py-24 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
+            <div class="w-full md:w-3/5 text-center md:text-left">
+                <div class="inline-block bg-white/20 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold mb-6 backdrop-blur-md border border-white/30">
+                    良弓須有善射者 · 二十年金牌教學團隊
                 </div>
-                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                    金名資優數學<br>
-                    <span class="text-yellow-300">啟發無限可能的數學邏輯</span>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight leading-tight">
+                    神兵利器，<br class="hidden sm:block">
+                    <span class="text-yellow-300">唯有高手能發揮威力</span>
                 </h1>
-                <p class="text-xl mb-8 opacity-90 leading-relaxed">
-                    我們精選專業<strong>奧林匹克進階數學教材</strong>，結合國際級競賽題庫、以及<strong>自編的資優數學教材</strong>。<br>
-                    帶領同學從基礎到加深，培養獨立拆解難題的能力。
+                <p class="text-base sm:text-lg lg:text-xl mb-10 opacity-95 leading-relaxed max-w-2xl mx-auto md:mx-0">
+                    教材就像是武器，至於教學的人若能掌握這些武器，那教學能力勢必會大幅提升。<br class="mt-4">
+                    坊間教材眾多，我們結合專業奧數教材與<strong>逾二十年實戰經驗</strong>，為孩子鍛造最強大腦。
                 </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#admissions" class="bg-yellow-400 text-blue-900 px-8 py-3 rounded-lg font-bold hover:bg-yellow-300 transition shadow-lg">最新課程專區</a>
-                    <a href="#branches" class="bg-white/10 border border-white/30 px-8 py-3 rounded-lg font-bold hover:bg-white/20 transition">聯繫分校導航</a>
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                    <a href="#master" class="bg-yellow-400 text-blue-900 px-10 py-4 rounded-xl font-bold hover:bg-yellow-300 transition shadow-lg text-center">見證師資深度</a>
+                    <a href="#admissions" class="bg-white/10 border border-white/40 px-10 py-4 rounded-xl font-bold hover:bg-white/20 transition text-center">查看最新課程</a>
                 </div>
             </div>
-            <div class="md:w-1/2 flex justify-center">
-                <div class="relative p-2 bg-white/10 rounded-2xl backdrop-blur-sm">
-                    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEiZfm4VI-MMnLuqSU0xOgXwbWN-f3eN6F6Hn6rkbZes9wXfUw7655nIyo1LJ6QzA9cOv_j5wFfKW-gDTijB8NeuXVcZqvt93c-Mgiqn3KReMXtLJTczkM1PvTe_X0nLkTlMF_oXJnDUNmLACzognt2FkIU2A85MSRcQykKafbb8E-7xh1U9ZfW8_WYd6YY" alt="Book Banner" class="max-w-full h-auto rounded-xl shadow-2xl">
+            <div class="w-full md:w-2/5 flex justify-center">
+                <div class="relative w-full max-w-sm">
+                    <div class="absolute inset-0 bg-yellow-400/20 blur-3xl rounded-full"></div>
+                    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEiZfm4VI-MMnLuqSU0xOgXwbWN-f3eN6F6Hn6rkbZes9wXfUw7655nIyo1LJ6QzA9cOv_j5wFfKW-gDTijB8NeuXVcZqvt93c-Mgiqn3KReMXtLJTczkM1PvTe_X0nLkTlMF_oXJnDUNmLACzognt2FkIU2A85MSRcQykKafbb8E-7xh1U9ZfW8_WYd6YY" alt="奧林匹克進階數學教材" class="relative z-10 w-full h-auto rounded-2xl shadow-2xl border-4 border-white/10">
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Branch Info Section -->
-    <section id="branches" class="py-20 bg-gray-50 border-b">
+    <!-- Master Instructor Section -->
+    <section id="master" class="py-16 sm:py-24 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-blue-900 mb-4">金名資優教育體系 · 三大分校</h2>
-                <p class="text-gray-600">深耕竹北，為您提供最優質的資優數學教育</p>
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+                <div class="w-full lg:w-1/2 order-2 lg:order-1">
+                    <div class="relative bg-gray-50 rounded-3xl p-8 sm:p-12 border border-gray-100">
+                        <div class="absolute -top-6 left-8 bg-blue-700 text-white px-6 py-3 rounded-2xl shadow-xl">
+                            <span class="text-sm opacity-80 block italic">Golden Name Legend</span>
+                            <span class="text-xl font-bold tracking-wider">總班主任榮譽榜</span>
+                        </div>
+                        <div class="mt-4 space-y-8">
+                            <div class="grid sm:grid-cols-2 gap-y-8 gap-x-6">
+                                <div class="flex items-start space-x-3">
+                                    <i class="fas fa-medal text-yellow-500 text-2xl mt-1"></i>
+                                    <span class="font-bold text-gray-700">補教最高榮譽<br><span class="text-blue-600">補教師鐸獎</span></span>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <i class="fas fa-trophy text-yellow-500 text-2xl mt-1"></i>
+                                    <span class="font-bold text-gray-700">教學計劃<br><span class="text-blue-600">全國冠軍</span></span>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <i class="fas fa-certificate text-blue-500 text-2xl mt-1"></i>
+                                    <span class="font-bold text-gray-900">教育部合格<br><span class="text-blue-600">教師證書</span></span>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <i class="fas fa-star text-yellow-400 text-2xl mt-1"></i>
+                                    <span class="font-bold text-gray-700">全國大專<br><span class="text-blue-600">優秀青年</span></span>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <i class="fas fa-thumbs-up text-blue-500 text-2xl mt-1"></i>
+                                    <span class="font-bold text-gray-700">家長學生<br><span class="text-blue-600">口碑推薦</span></span>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <i class="fas fa-flag text-red-500 text-2xl mt-1"></i>
+                                    <span class="font-bold text-gray-700">奪冠獲獎<br><span class="text-blue-600">總統親自表揚</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 order-1 lg:order-2">
+                    <h3 class="text-2xl sm:text-3xl font-bold mb-6 text-gray-800 leading-snug italic">「孩子很懶，但就是喜歡上金名的數學課」</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                        一位上了好幾家資優數學後的家長給了金名這樣評價：<br>
+                        <span class="text-blue-700 font-bold bg-blue-50 px-3 py-1 rounded-md inline-block mt-2 shadow-sm italic">「我沒看過我兒子這麼喜歡數學！他平時很懶、不喜歡讀書，但就是喜歡上金名的資優數學課。」</span>
+                    </p>
+                    <div class="bg-blue-600 text-white p-8 rounded-3xl shadow-xl">
+                        <h4 class="font-bold text-xl mb-4 flex items-center">
+                            <i class="fas fa-trophy text-yellow-300 mr-3"></i> 資優鑑定突破紀錄
+                        </h4>
+                        <p class="opacity-95 text-lg leading-relaxed mb-4">
+                            該生在小六鑑定時，其<strong class="text-yellow-300 underline decoration-2 underline-offset-4">數學科成績幾乎是其他考生的兩倍以上</strong>，順利通過縣府鑑定。家長說因為數學成績超高，當時自然科隨便考也會錄取！
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 text-blue-900 italic">神兵利器 · 唯有高手發揮</h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    坊間教材眾多，我們結合專業奧數教材與逾二十年實戰經驗，為孩子鍛造最強大腦。
+                </p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- 竹北校 -->
-                <div class="branch-card">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <h4 class="text-2xl font-bold text-blue-800">金名竹北校</h4>
-                            <span class="bg-blue-50 text-blue-600 text-xs px-2 py-1 rounded">2011 成立</span>
-                        </div>
-                        <div class="space-y-3 text-gray-600 mb-6">
-                            <div class="flex items-start">
-                                <i class="fas fa-phone mt-1 w-6 text-blue-500"></i>
-                                <span class="font-bold text-lg text-gray-800 tracking-wider">03-6560002</span>
-                            </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-map-marker-alt mt-1 w-6 text-red-500"></i>
-                                <span>竹北市國興街 28-1 號<br><span class="text-xs text-gray-400">(竹北國中側門)</span></span>
-                            </div>
-                        </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-orange-50 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-orange-200">
+                        <i class="fas fa-brain text-xl"></i>
                     </div>
-                    <a href="https://share.google/LjA0ep0IBUpaqT4Pw" target="_blank" class="w-full bg-blue-600 text-white text-center py-3 rounded-lg font-bold hover:bg-blue-700 transition flex items-center justify-center space-x-2">
-                        <i class="fas fa-location-arrow"></i>
-                        <span>Google 地圖導航</span>
-                    </a>
+                    <h4 class="font-bold text-lg mb-4 text-orange-900">基礎數感訓練</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">透過「移多補少」建立核心數量感。精確計數不遺漏，啟發基數與序數的辨識能力。</p>
                 </div>
-
-                <!-- 東興校 -->
-                <div class="branch-card">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <h4 class="text-2xl font-bold text-green-800">金名東興校</h4>
-                            <span class="bg-green-50 text-green-600 text-xs px-2 py-1 rounded">2016 成立</span>
-                        </div>
-                        <div class="space-y-3 text-gray-600 mb-6">
-                            <div class="flex items-start">
-                                <i class="fas fa-phone mt-1 w-6 text-green-500"></i>
-                                <span class="font-bold text-lg text-gray-800 tracking-wider">03-6585122</span>
-                            </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-map-marker-alt mt-1 w-6 text-red-500"></i>
-                                <span>竹北市嘉豐 11 路 2 段 69 號<br><span class="text-xs text-gray-400">(東興國小)</span></span>
-                            </div>
-                        </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-blue-50 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-500 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-200">
+                        <i class="fas fa-microchip text-xl"></i>
                     </div>
-                    <a href="https://share.google/lHzQgD2J6eSx5p851" target="_blank" class="w-full bg-green-600 text-white text-center py-3 rounded-lg font-bold hover:bg-green-700 transition flex items-center justify-center space-x-2">
-                        <i class="fas fa-location-arrow"></i>
-                        <span>Google 地圖導航</span>
-                    </a>
+                    <h4 class="font-bold text-lg mb-4 text-blue-900">邏輯與代數思維</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">由規規分析與等量代換出發，在填寫數陣中理解交集概念，提早建立代數建模能力。</p>
                 </div>
-
-                <!-- 德晉校 -->
-                <div class="branch-card">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <h4 class="text-2xl font-bold text-purple-800">金名德晉校</h4>
-                            <span class="bg-purple-50 text-purple-600 text-xs px-2 py-1 rounded">2023 成立</span>
-                        </div>
-                        <div class="space-y-3 text-gray-600 mb-6">
-                            <div class="flex items-start">
-                                <i class="fas fa-phone mt-1 w-6 text-purple-500"></i>
-                                <span class="font-bold text-lg text-gray-800 tracking-wider">03-6572508</span>
-                            </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-map-marker-alt mt-1 w-6 text-red-500"></i>
-                                <span>竹北市文孝街 23 號 2 樓<br><span class="text-xs text-gray-400">(補教協會 2 樓)</span></span>
-                            </div>
-                        </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-green-50 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-green-500 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-green-200">
+                        <i class="fas fa-cube text-xl"></i>
                     </div>
-                    <a href="https://share.google/kF7KmSOl6BN2IOaQD" target="_blank" class="w-full bg-purple-600 text-white text-center py-3 rounded-lg font-bold hover:bg-purple-700 transition flex items-center justify-center space-x-2">
-                        <i class="fas fa-location-arrow"></i>
-                        <span>Google 地圖導航</span>
-                    </a>
+                    <h4 class="font-bold text-lg mb-4 text-green-900">空間感知建構</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">立體積木拆解與火柴棒變換，在腦中進行三維形體的視覺化組合與逆向思考練習。</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-purple-50 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-purple-500 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-purple-200">
+                        <i class="fas fa-stream text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-4 text-purple-900">系統化解難能力</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">學會「有序思考」，在複雜情境（如排隊、間隔問題）中不重複也不遺漏地排除陷阱。</p>
                 </div>
             </div>
         </div>
@@ -243,19 +273,19 @@
             <div class="flex flex-col lg:flex-row items-center gap-12">
                 <div class="lg:w-1/2">
                     <div class="inline-block bg-blue-600 text-white px-4 py-1 rounded-md text-sm font-bold mb-4">激發強烈動機</div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-900">上課超好玩！<br>趣味計分系統讓孩子愛上算題</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-900">捨不得下課！<br>趣味計分系統讓孩子愛上算題</h2>
                     <p class="text-gray-700 text-lg leading-relaxed mb-6">
                         在金名，孩子會主動要求「再多算幾題」！<br>
-                        我們採用獨特的<strong>趣味計分系統</strong>，透過同儕間的良性競爭，營造絕佳的讀書氛圍。常常下課時間到了都捨不得走，硬是要多加幾分！
+                        我們採用獨特的<strong>趣味計分系統</strong>，透過同儕良性競爭營造絕佳讀書氛圍。孩子們常常下課時間到了都捨不得走，硬是要多算幾題加分！
                     </p>
-                    <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-yellow-400">
-                        <p class="italic text-gray-600">「同學學習動機強烈，同儕競爭帶動學習自信，讓數學成為一件有成就感的事。」</p>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-yellow-400">
+                        <p class="italic text-gray-700">「同學學習動機強烈，同儕競爭帶動學習自信，讓數學成為一件有成就感的事。」</p>
                     </div>
                 </div>
                 <div class="lg:w-1/2 w-full">
                     <div class="relative">
-                        <img src="https://i.postimg.cc/mZ6JbBVC/S-654360578.jpg" alt="Scoring System" class="score-img">
-                        <div class="absolute -top-4 -right-4 bg-red-500 text-white font-bold py-2 px-4 rounded-lg shadow-lg animate-bounce">
+                        <img src="https://i.postimg.cc/mZ6JbBVC/S-654360578.jpg" alt="趣味計分系統" class="rounded-3xl shadow-2xl border-4 border-white">
+                        <div class="absolute -top-4 -right-4 bg-red-500 text-white font-bold py-2 px-6 rounded-full shadow-lg animate-bounce">
                             挑戰積分中！
                         </div>
                     </div>
@@ -264,143 +294,190 @@
         </div>
     </section>
 
-    <!-- Textbook Summary Section -->
-    <section id="philosophy" class="py-20 bg-white">
+    <!-- Branch Admissions Section -->
+    <section id="admissions" class="py-20 bg-gray-100 border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4 text-blue-900">《奧林匹克進階數學》核心能力培訓</h2>
-                <p class="text-gray-600 text-lg">循序漸進題型設計，全方位啟發資優思維，並搭配金名自編專業教材</p>
+                <h2 class="text-4xl font-bold mb-4 text-gray-900">🚀 2026 各大課程 · 熱烈招生中！</h2>
+                <p class="text-gray-600 text-lg">選擇離您最近的校區，為孩子的未來領航</p>
+            </div>
+
+            <!-- 金名竹北校 -->
+            <div class="mb-20">
+                <div class="text-center md:text-left mb-8">
+                    <h3 class="text-2xl sm:text-3xl font-bold text-blue-800 border-b-4 border-blue-500 inline-block pb-1">✨ 金名竹北校 ✨</h3>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="https://mocher235-byte.github.io/new/" target="_blank" class="course-card bg-white p-8 rounded-3xl flex flex-col items-center text-center group">
+                        <i class="fas fa-school text-4xl text-blue-500 mb-4"></i>
+                        <h4 class="font-bold text-xl mb-4 group-hover:text-blue-600 transition">🎒 升小一新生說明會</h4>
+                        <p class="text-sm text-gray-400 font-bold">👉 立即點擊預約</p>
+                    </a>
+                    <a href="https://mocher235-byte.github.io/apple/" target="_blank" class="course-card bg-white p-8 rounded-3xl flex flex-col items-center text-center group">
+                        <i class="fas fa-apple-alt text-4xl text-red-500 mb-4"></i>
+                        <h4 class="font-bold text-xl mb-4 group-hover:text-red-600 transition">🍎 AI 科技教學體驗</h4>
+                        <p class="text-sm text-gray-400 font-bold">👉 了解詳情</p>
+                    </a>
+                    <a href="https://mocher235-byte.github.io/kidsabc/" target="_blank" class="course-card bg-white p-8 rounded-3xl flex flex-col items-center text-center group">
+                        <i class="fas fa-child text-4xl text-green-500 mb-4"></i>
+                        <h4 class="font-bold text-xl mb-4 group-hover:text-green-600 transition">🧸 幼兒美語啟蒙班</h4>
+                        <p class="text-sm text-gray-400 font-bold">👉 啟蒙對話</p>
+                    </a>
+                    <a href="https://mocher235-byte.github.io/summer/" target="_blank" class="course-card bg-white p-8 rounded-3xl flex flex-col items-center text-center group">
+                        <i class="fas fa-sun text-4xl text-yellow-500 mb-4"></i>
+                        <h4 class="font-bold text-xl mb-4 group-hover:text-yellow-600 transition">🏖️ 2026 時空旅行暑期</h4>
+                        <p class="text-sm text-gray-400 font-bold">👉 暑期報名</p>
+                    </a>
+                    <a href="https://mocher235-byte.github.io/jingming/" target="_blank" class="course-card bg-white p-8 rounded-3xl flex flex-col items-center text-center group">
+                        <i class="fas fa-bullseye text-4xl text-purple-500 mb-4"></i>
+                        <h4 class="font-bold text-xl mb-4 group-hover:text-purple-600 transition">🎯 115年私中特訓班</h4>
+                        <p class="text-sm text-gray-400 font-bold">👉 決勝曙光</p>
+                    </a>
+                    <a href="https://mocher235-byte.github.io/789/" target="_blank" class="course-card bg-white p-8 rounded-3xl flex flex-col items-center text-center group">
+                        <i class="fas fa-calendar-alt text-4xl text-gray-500 mb-4"></i>
+                        <h4 class="font-bold text-xl mb-4 group-hover:text-gray-900 transition">📝 國中部專業課表</h4>
+                        <p class="text-sm text-gray-400 font-bold">👉 查看課表</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 金名德晉校 -->
+            <div>
+                <div class="text-center md:text-left mb-8">
+                    <h3 class="text-2xl sm:text-3xl font-bold text-purple-800 border-b-4 border-purple-500 inline-block pb-1">✨ 金名德晉校 ✨</h3>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <!-- 德晉正音班 -->
+                    <a href="https://mocher235-byte.github.io/djPreschool/" target="_blank" class="course-card bg-white p-8 rounded-3xl border-l-8 border-l-purple-500 group">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-purple-600 group-hover:text-white transition">
+                                <i class="fas fa-graduation-cap text-3xl"></i>
+                            </div>
+                            <h4 class="font-bold text-2xl text-gray-800 group-hover:text-purple-700 transition">小一新生必備！🎒 正音班</h4>
+                        </div>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-6">讓孩子愛上ㄅㄆㄇ，自信開啟校園生活 ✨ 金名德晉正音班，陪孩子快樂過渡！</p>
+                        <div class="flex items-center text-purple-600 font-bold">
+                            <span class="mr-2">🔗 立即預約德晉正音班</span>
+                            <i class="fas fa-arrow-right animate-pulse"></i>
+                        </div>
+                    </a>
+                    <!-- 德晉國中課表 -->
+                    <a href="https://mocher235-byte.github.io/dj789/" target="_blank" class="course-card bg-white p-8 rounded-3xl border-l-8 border-l-blue-500 group">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                                <i class="fas fa-clipboard-list text-3xl"></i>
+                            </div>
+                            <h4 class="font-bold text-2xl text-gray-800 group-hover:text-blue-700 transition">國中課表大公開！📅</h4>
+                        </div>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-6">提早規劃，學習更有目標。金名德晉專業師資，陪孩子戰勝國中考驗 💯</p>
+                        <div class="flex items-center text-blue-600 font-bold">
+                            <span class="mr-2">🔗 點此查看國中班課表</span>
+                            <i class="fas fa-arrow-right animate-pulse"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branch Map Navigation -->
+    <section id="branches" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">分校導航 · 歡迎親臨諮詢</h2>
+                <p class="text-gray-600">我們已準備好最頂尖的「武器」，等待與孩子共同戰勝難題</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Cap 1 -->
-                <div class="p-6 rounded-2xl bg-orange-50 border border-orange-100">
-                    <div class="w-12 h-12 bg-orange-500 text-white rounded-xl flex items-center justify-center mb-4 shadow-md">
-                        <i class="fas fa-sort-numeric-down text-xl"></i>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- 竹北校 -->
+                <div class="branch-card">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-xl font-bold text-blue-900">金名竹北校</h4>
+                            <span class="bg-blue-50 text-blue-600 text-xs px-2 py-1 rounded">2011 成立</span>
+                        </div>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center text-blue-700">
+                                <i class="fas fa-phone w-8"></i>
+                                <span class="font-bold">03-6560002</span>
+                            </div>
+                            <div class="flex items-start text-gray-600 text-sm">
+                                <i class="fas fa-map-marker-alt w-8 mt-1 text-red-500"></i>
+                                <span>竹北市國興街 28-1 號<br>(竹北國中側門)</span>
+                            </div>
+                        </div>
                     </div>
-                    <h4 class="font-bold text-lg mb-3">基礎數感與數量</h4>
-                    <ul class="text-gray-600 text-sm space-y-2 leading-relaxed">
-                        <li>• 精確計數不遺漏</li>
-                        <li>• 「移多補少」均衡練習</li>
-                        <li>• 基數與序數辨識</li>
-                        <li>• 倍數與比例概念啟蒙</li>
-                    </ul>
+                    <a href="https://share.google/LjA0ep0IBUpaqT4Pw" target="_blank" class="w-full bg-blue-600 text-white text-center py-3 rounded-lg font-bold hover:bg-blue-700 transition block shadow-md">
+                        <i class="fas fa-directions mr-2"></i>Google 地圖導航
+                    </a>
                 </div>
-                <!-- Cap 2 -->
-                <div class="p-6 rounded-2xl bg-blue-50 border border-blue-100">
-                    <div class="w-12 h-12 bg-blue-500 text-white rounded-xl flex items-center justify-center mb-4 shadow-md">
-                        <i class="fas fa-microchip text-xl"></i>
+
+                <!-- 東興校 -->
+                <div class="branch-card">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-xl font-bold text-green-900">金名東興校</h4>
+                            <span class="bg-green-50 text-green-600 text-xs px-2 py-1 rounded">2016 成立</span>
+                        </div>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center text-green-700">
+                                <i class="fas fa-phone w-8"></i>
+                                <span class="font-bold">03-6585122</span>
+                            </div>
+                            <div class="flex items-start text-gray-600 text-sm">
+                                <i class="fas fa-map-marker-alt w-8 mt-1 text-red-500"></i>
+                                <span>竹北市嘉豐 11 路 2 段 69 號<br>(東興國小旁)</span>
+                            </div>
+                        </div>
                     </div>
-                    <h4 class="font-bold text-lg mb-3">邏輯推理與代數</h4>
-                    <ul class="text-gray-600 text-sm space-y-2 leading-relaxed">
-                        <li>• 圖形與數列規律分析</li>
-                        <li>• 圖形算式等量代換</li>
-                        <li>• 限制條件推理應用</li>
-                        <li>• 代數思維早期建立</li>
-                    </ul>
+                    <a href="https://share.google/lHzQgD2J6eSx5p851" target="_blank" class="w-full bg-green-600 text-white text-center py-3 rounded-lg font-bold hover:bg-green-700 transition block shadow-md">
+                        <i class="fas fa-directions mr-2"></i>Google 地圖導航
+                    </a>
                 </div>
-                <!-- Cap 3 -->
-                <div class="p-6 rounded-2xl bg-green-50 border border-green-100">
-                    <div class="w-12 h-12 bg-green-500 text-white rounded-xl flex items-center justify-center mb-4 shadow-md">
-                        <i class="fas fa-cube text-xl"></i>
+
+                <!-- 德晉校 -->
+                <div class="branch-card">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-xl font-bold text-purple-900">金名德晉校</h4>
+                            <span class="bg-purple-50 text-purple-600 text-xs px-2 py-1 rounded">2023 成立</span>
+                        </div>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center text-purple-700">
+                                <i class="fas fa-phone w-8"></i>
+                                <span class="font-bold">03-6572508</span>
+                            </div>
+                            <div class="flex items-start text-gray-600 text-sm">
+                                <i class="fas fa-map-marker-alt w-8 mt-1 text-red-500"></i>
+                                <span>竹北市文孝街 23 號 2 樓<br>(補教協會 2 樓)</span>
+                            </div>
+                        </div>
                     </div>
-                    <h4 class="font-bold text-lg mb-3">空間感知與幾何</h4>
-                    <ul class="text-gray-600 text-sm space-y-2 leading-relaxed">
-                        <li>• 立體積木拆解觀察</li>
-                        <li>• 火柴棒圖形靈活變換</li>
-                        <li>• 隱蔽物推理計數</li>
-                        <li>• 基本幾何特徵辨識</li>
-                    </ul>
-                </div>
-                <!-- Cap 4 -->
-                <div class="p-6 rounded-2xl bg-purple-50 border border-purple-100">
-                    <div class="w-12 h-12 bg-purple-500 text-white rounded-xl flex items-center justify-center mb-4 shadow-md">
-                        <i class="fas fa-stream text-xl"></i>
-                    </div>
-                    <h4 class="font-bold text-lg mb-3">系統化解難能力</h4>
-                    <ul class="text-gray-600 text-sm space-y-2 leading-relaxed">
-                        <li>• 有條理分類計數</li>
-                        <li>• 水位與重量間接比較</li>
-                        <li>• 排隊問題情境拆解</li>
-                        <li>• 排除重複計算陷阱</li>
-                    </ul>
+                    <a href="https://share.google/kF7KmSOl6BN2IOaQD" target="_blank" class="w-full bg-purple-600 text-white text-center py-3 rounded-lg font-bold hover:bg-purple-700 transition block shadow-md">
+                        <i class="fas fa-directions mr-2"></i>Google 地圖導航
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Admissions Section -->
-    <section id="admissions" class="py-20 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gray-900">🚀 2026 各大熱門課程．熱烈招生中！</h2>
-                <p class="text-gray-600">加入金名，預見更卓越的自己</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="https://mocher235-byte.github.io/new/" class="course-card bg-white p-6 rounded-2xl group">
-                    <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center text-blue-600 mb-4 group-hover:bg-blue-600 group-hover:text-white transition"><i class="fas fa-school"></i></div>
-                    <h3 class="font-bold text-xl mb-2 text-blue-900">🎒 升小一新生說明會</h3>
-                    <span class="text-blue-600 font-bold group-hover:underline">👉 立即預約 </span>
-                </a>
-                <a href="https://mocher235-byte.github.io/apple/" class="course-card bg-white p-6 rounded-2xl group">
-                    <div class="bg-red-100 w-12 h-12 rounded-lg flex items-center justify-center text-red-600 mb-4 group-hover:bg-red-600 group-hover:text-white transition"><i class="fas fa-apple-alt"></i></div>
-                    <h3 class="font-bold text-xl mb-2 text-red-900">🍎 AI 科技教學體驗</h3>
-                    <span class="text-blue-600 font-bold group-hover:underline">👉 了解詳情 </span>
-                </a>
-                <a href="https://mocher235-byte.github.io/kidsabc/" class="course-card bg-white p-6 rounded-2xl group">
-                    <div class="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-600 group-hover:text-white transition"><i class="fas fa-child"></i></div>
-                    <h3 class="font-bold text-xl mb-2 text-green-900">🧸 幼兒美語啟蒙班</h3>
-                    <span class="text-blue-600 font-bold group-hover:underline">👉 啟蒙對話 </span>
-                </a>
-                <a href="https://mocher235-byte.github.io/summer/" class="course-card bg-white p-6 rounded-2xl group">
-                    <div class="bg-yellow-100 w-12 h-12 rounded-lg flex items-center justify-center text-yellow-600 mb-4 group-hover:bg-yellow-600 group-hover:text-white transition"><i class="fas fa-sun"></i></div>
-                    <h3 class="font-bold text-xl mb-2 text-yellow-800">🏖️ 2026 時空旅行暑期課程</h3>
-                    <span class="text-blue-600 font-bold group-hover:underline">👉 暑期報名 </span>
-                </a>
-                <a href="https://mocher235-byte.github.io/jingming/" class="course-card bg-white p-6 rounded-2xl group">
-                    <div class="bg-purple-100 w-12 h-12 rounded-lg flex items-center justify-center text-purple-600 mb-4 group-hover:bg-purple-600 group-hover:text-white transition"><i class="fas fa-bullseye"></i></div>
-                    <h3 class="font-bold text-xl mb-2 text-purple-900">🎯 115年私中特訓班</h3>
-                    <span class="text-blue-600 font-bold group-hover:underline">👉 決勝曙光 </span>
-                </a>
-                <a href="https://mocher235-byte.github.io/789/" class="course-card bg-white p-6 rounded-2xl group">
-                    <div class="bg-gray-100 w-12 h-12 rounded-lg flex items-center justify-center text-gray-600 mb-4 group-hover:bg-gray-600 group-hover:text-white transition"><i class="fas fa-calendar-alt"></i></div>
-                    <h3 class="font-bold text-xl mb-2 text-gray-800">📝 國中部專業課表</h3>
-                    <span class="text-blue-600 font-bold group-hover:underline">👉 查看課表 </span>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-10 text-yellow-400">名師引航 · 為孩子開啟智慧之門</h2>
+            <div class="flex flex-col sm:flex-row justify-center gap-6 mb-16">
+                <a href="https://line.me/ti/p/vQcf6cONnl" target="_blank" class="bg-green-600 hover:bg-green-700 px-10 py-4 rounded-xl font-bold transition flex items-center justify-center shadow-lg">
+                    <i class="fab fa-line mr-3 text-2xl"></i> LINE 預約諮詢名師
                 </a>
             </div>
+            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjRqKCNWrsH37nthSraJgRc4iUslqv0Pw0urBa9ZwTuV3CLiliGNWjV3EddlJwJ7ox07Uol5GQL77Msjqw-_MUrwQIS6E7iHsdc-RaogP2TVjkJmZ1IkGSrX4ZCLfiZmapAPl5PyxovhZwtsxh080ROmCTJWQcbdtBMAAYIlO-BIsofB7tRYNn0ZZTHEgM" alt="Golden Name Footer Logo" class="mx-auto mb-10 opacity-40 max-w-[150px]">
+            <p class="text-sm text-gray-500">&copy; 2026 金名資優教育體系. 由補教師鐸獎得主總主任領軍教學. </p>
+            <p class="text-xs text-gray-700 mt-2 italic">教材使用：奧林匹克進階數學 (潘小云編著) 與 金名自編專業資優教材</p>
         </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section id="contact" class="py-20 bg-blue-900 text-white text-center">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-10">開啟資優思維的關鍵第一步</h2>
-            <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="https://line.me/ti/p/vQcf6cONnl" target="_blank" class="bg-green-500 hover:bg-green-600 px-10 py-4 rounded-full font-bold transition flex items-center justify-center shadow-xl">
-                    <i class="fab fa-line mr-2 text-2xl"></i> LINE 預約諮詢
-                </a>
-                <a href="#branches" class="bg-blue-600 hover:bg-blue-700 px-10 py-4 rounded-full font-bold transition flex items-center justify-center shadow-xl">
-                    <i class="fas fa-phone mr-2 text-xl"></i> 分校聯絡資訊
-                </a>
-            </div>
-            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjRqKCNWrsH37nthSraJgRc4iUslqv0Pw0urBa9ZwTuV3CLiliGNWjV3EddlJwJ7ox07Uol5GQL77Msjqw-_MUrwQIS6E7iHsdc-RaogP2TVjkJmZ1IkGSrX4ZCLfiZmapAPl5PyxovhZwtsxh080ROmCTJWQcbdtBMAAYIlO-BIsofB7tRYNn0ZZTHEgM" alt="Footer Logo" class="mx-auto mt-16 opacity-40 max-w-[200px]">
-        </div>
-    </section>
-
-    <footer class="bg-gray-900 text-gray-500 py-8 px-4 text-center text-sm">
-        <div class="max-w-7xl mx-auto mb-4 flex flex-wrap justify-center gap-4">
-            <span>竹北校 03-6560002</span>
-            <span class="text-gray-700">|</span>
-            <span>東興校 03-6585122</span>
-            <span class="text-gray-700">|</span>
-            <span>德晉校 03-6572508</span>
-        </div>
-        <p>&copy; 2026 金名資優教育體系. 專業教材與系統化教學領航者.</p>
-        <p class="mt-2 text-gray-700 text-xs italic">教材使用：奧林匹克進階數學 (潘小云編著) 及 金名自編資優教材</p>
     </footer>
 
     <script>
-        // Smooth Scroll Logic
+        // Smooth Scroll Logic with Error Handling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
